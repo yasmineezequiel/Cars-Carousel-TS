@@ -5,6 +5,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      {/* make sure that my fetch function gets called inside of a useEffect or it won't be triggered
+      useEffect(() => {
+        fetchData()
+      }, []) */}
     </div>
   );
 }
