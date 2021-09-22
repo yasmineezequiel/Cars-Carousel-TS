@@ -12,9 +12,9 @@ const useFetchDataService = () => {
   });
 
   useEffect(() => {
-      fetch('/public/api/cars.json')
+      fetch('api/cars.json')
       .then(response => response.json())
-      .then(response => setCar({ status: 'loaded', payload: response}))
+      .then(response => setCar(response))
       .catch(error => setCar({ status: 'error', error}))
   }, [])
   return car

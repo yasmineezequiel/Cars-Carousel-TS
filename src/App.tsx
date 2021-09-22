@@ -3,7 +3,6 @@ import React from 'react';
 import './App.css';
 import RechargedCars from './component/RechargedCars';
 
-// need to declare FC (functional component for typescript)
 function App() {
   return (
     <div className="App">

@@ -9,11 +9,8 @@ const RechargedCars: React.FC<{}> = () => {
     <>
       <div>
         {service.status === 'loading' && <div>Loading...</div>}
-        {service.status === 'loaded' &&
-          service.payload.results.map(item => (
-            <div key={item.id}>{item.modelName}</div>
-          ))}
-          {service.status === 'error' && (
+        {JSON.stringify(service)}
+        {service.status === 'error' && (
             <div>Error, the backend drove off the road.</div>
           )}
       </div>
