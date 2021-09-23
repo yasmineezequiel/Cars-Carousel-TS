@@ -7,7 +7,7 @@ export interface RechargedCars {
 }
 
 const useFetchDataService = () => {
-  const [car, setCar] = useState<Service<RechargedCars>>({
+  const [cars, setCar] = useState<Service<RechargedCars>>({
     status: 'loading'
   });
 
@@ -17,7 +17,7 @@ const useFetchDataService = () => {
       .then(response => setCar(response))
       .catch(error => setCar({ status: 'error', error}))
   }, [])
-  return car
+  return cars
 };
 
 export default useFetchDataService;
