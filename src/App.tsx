@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="components">
-        <RechargedCars />
+        <RechargedCars results={[]} />
       </div>
     </div>
   );
