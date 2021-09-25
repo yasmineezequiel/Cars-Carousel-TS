@@ -4,4 +4,6 @@ export interface RechargedCar {
   bodyType: string;
   modelType: string;
   imageUrl: string;
+  volvo: any;
+  i: number;
 }

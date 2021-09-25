@@ -2,7 +2,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { RechargedCar } from '../types/RechargedCar';
-import { StyleProvider, ThemePicker } from 'vcc-ui';
+// import { Link } from 'react-router-dom';
+import { StyleProvider, ThemePicker, Link } from 'vcc-ui';
 import { Text, View } from 'vcc-ui';
 import '../stlying/RechargedCars.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -36,23 +37,30 @@ const RechargedCars: React.FC<Props> = () => {
   return (
     <div>
       {loading === true && <div>Loading</div>}
-      <Swiper slidesPerView={'auto'} centeredSlides={true} spaceBetween={30} pagination={{ "clickable": true }} className="mySwiper">
-        {volvos.map((volvo: any, index: number) => (
+      <Swiper slidesPerView={4} centeredSlides={true} spaceBetween={30}
+        pagination={{ "clickable": true }} className="mySwiper">
+        {volvos.map((volvo, i) => (
           <>
-            <SwiperSlide key={index}>
+            <SwiperSlide key={i}>
               <StyleProvider>
                 <ThemePicker>
                   <View>
-                    <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '12px', fontWeight: 'bold' }}>
+                    <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '12px', fontWeight: 'bold', textAlign: 'left' }}>
                      {volvo.bodyType.toUpperCase()}
                     </Text>
-                    <Text style={{ color: '#141414', fontWeight: 'bold', fontSize: '16px' }}>
-                      {volvo.modelName}
-                    </Text>
-                    <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '16px' }}>
-                      {volvo.modelType}
-                    <img src={volvo.imageUrl} alt='Volvo s60 img' style={{ width: '276.89px' }}/>
-                    </Text>
+                    <div className='second-row' style= {{ textAlign: 'left', display: 'inline-block' }}>
+                      <Text style={{ color: '#141414', fontWeight: 'bold', fontSize: '16px' }}>
+                        {volvo.modelName}
+                      </Text>
+                      <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '16px' }}>
+                        {volvo.modelType}
+                      </Text>
+                      <img src={volvo.imageUrl} alt='Volvo s60 img' style={{ width: '276.89px' }}/>
+                    </div>
+                    <div className='links' style={{ padding: '12px', lineHeight: '1.375rem', justifyContent: 'center', display: 'inline-flex', margin: '2px' }}>
+                      <Link href={`/learn/${volvo.id}`} arrow="right">LEARN</Link>
+                      <Link href={`/shop/${volvo.id}`} arrow="right">SHOP</Link>
+                    </div>
                   </View>
                 </ThemePicker>
               </StyleProvider>
