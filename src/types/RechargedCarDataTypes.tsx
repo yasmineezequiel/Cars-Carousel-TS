@@ -1,4 +1,4 @@
-export interface RechargedCar {
+export interface RechargedCarDataType {
   id: string;
   modelName: string;
   bodyType: string;
@@ -6,4 +6,5 @@ export interface RechargedCar {
   imageUrl: string;
   volvo: any;
   i: number;
+  Swiper: any,
 }

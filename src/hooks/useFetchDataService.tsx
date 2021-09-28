@@ -1,23 +1,31 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
-import { Service } from '../types/Service';
-import { RechargedCar } from '../types/RechargedCar';
+import { RechargedCarDataType } from '../types/RechargedCarDataTypes';
 
-export interface RechargedCars {
-  results: RechargedCar[]
+export interface Props {
+  results: RechargedCarDataType[]
 }
 
 const useFetchDataService = () => {
-  const [cars, setCar] = useState<Service<RechargedCars>>({
-    status: 'loading'
-  });
+  const [loading, setLoading] = useState(false)
+  const [volvos, setVolvos] = useState([])
+  // const [tag, setTag] = useState('all');
+
+
+  const fetchData = async () => {
+    try {
+      const res = await fetch('api/cars.json')
+      const data = await res.json()
+      setLoading(true)
+      setVolvos(data)
+      setLoading(false)
+    } catch (error) {
+    }
+  }
 
   useEffect(() => {
-      fetch('api/cars.json')
-      .then(response => response.json())
-      .then(response => setCar(response))
-      .catch(error => setCar({ status: 'error', error}))
+    fetchData()
   }, [])
-  return cars
 };
 
 export default useFetchDataService;
