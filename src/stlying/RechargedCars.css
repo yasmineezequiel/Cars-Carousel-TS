@@ -24,6 +24,7 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
+  margin-bottom: 35px !important;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -46,3 +47,79 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+@media only screen and (min-width: 701px) {
+  .swiper-button-prev {
+    background-image: url(./chevron-circled.svg) !important;
+    position:fixed;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+    top: 95% !important;
+    margin-left: 87% !important;
+  }
+
+  .swiper-button-prev::after {
+    display: none !important;
+  }
+
+  .swiper-button-next {
+    background-image: url(./chevron-circled.svg) !important;
+    position:fixed;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    top: 95% !important;
+    margin-right: 2% !important;
+  }
+
+  .swiper-button-next::after {
+    display: none !important;
+  }
+}
+
+.swiper-button-prev::after {
+  display: none !important;
+}
+
+.swiper-button-next::after {
+  display: none !important;
+}
+
+.swiper-pagination-bullet-active{
+  background: black !important;
+}
+
+.swiper-slide-active{
+  margin-right: 56px !important;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {
+  .green{
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+} */
+
+/* Medium devices (desktops, 992px and up) */
+/* @media (min-width: 992px) {
+.green{
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+} */
+
+/* Large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) {
+.green{
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+} */

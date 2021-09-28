@@ -1,13 +1,13 @@
 // eslint-disable-next-line
 import React from 'react';
 import './App.css';
-import RechargedCars from './component/RechargedCars';
+import RechargedCarsMain from './component/RechargedCarsMain';
 
 function App() {
   return (
     <div className="App">
       <div className="components">
-        <RechargedCars results={[]} />
+        <RechargedCarsMain results={[]} />
       </div>
     </div>
   );
