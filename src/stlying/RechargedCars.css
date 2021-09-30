@@ -48,7 +48,13 @@ body {
   object-fit: cover;
 }
 
-@media only screen and (min-width: 701px) {
+@media only screen and (min-width: 789px) {
+  .swiper-pagination-bullet {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 790px) and (max-width: 1600px) {
   .swiper-button-prev {
     background-image: url(./chevron-circled.svg) !important;
     position:fixed;
@@ -57,8 +63,11 @@ body {
     background-position: center;
     transform: rotate(180deg);
     transform-origin: 50% 50%;
-    top: 95% !important;
-    margin-left: 87% !important;
+    top: 350px !important;
+    margin-left: 93.5% !important;
+    left: 0 !important;
+    padding: 0.7vmin;
+    width: calc(var(--swiper-navigation-size) / 44 * 15) !important;
   }
 
   .swiper-button-prev::after {
@@ -71,8 +80,11 @@ body {
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
-    top: 95% !important;
-    margin-right: 2% !important;
+    top: 350px !important;
+    margin-right: auto !important;
+    right: 1% !important;
+    padding: 0.7vmin;
+    width: calc(var(--swiper-navigation-size) / 44 * 15) !important;
   }
 
   .swiper-button-next::after {
@@ -97,29 +109,3 @@ body {
 }
 
 
-/* Small devices (tablets, 768px and up) */
-/* @media (min-width: 768px) {
-  .green{
-      position: absolute;
-      top: 0;
-      right: 0;
-  }
-} */
-
-/* Medium devices (desktops, 992px and up) */
-/* @media (min-width: 992px) {
-.green{
-      position: absolute;
-      top: 0;
-      right: 0;
-  }
-} */
-
-/* Large devices (large desktops, 1200px and up) */
-/* @media (min-width: 1200px) {
-.green{
-      position: absolute;
-      top: 0;
-      right: 0;
-  }
-} */
