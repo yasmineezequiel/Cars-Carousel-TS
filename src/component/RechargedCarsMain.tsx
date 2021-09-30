@@ -63,18 +63,18 @@ const RechargedCarsMain: React.FC<Props> = () => {
                 <StyleProvider>
                   <ThemePicker>
                     <View>
-                      <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '12px', fontWeight: 'bold', textAlign: 'left' }}>
+                      <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '12px', fontWeight: 'bold', textAlign: 'left', display: 'flex' }}>
                       {volvo.bodyType.toUpperCase()}
                       </Text>
-                      <div className='parent' style= {{ textAlign: 'left', display: 'inline-block', width: '100%' }}>
+                      <div className='parent' style= {{ textAlign: 'left', width: '100%' }}>
                         <Text style={{ color: '#141414', fontWeight: 'bold', fontSize: '16px' }}>
                           {volvo.modelName}
-                            <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '16px', paddingLeft: '2px' }}>
+                            <Text style={{ fontFamily: 'Volvo Novum', color: '#707070', fontSize: '16px' }}>
                             {volvo.modelType}
                             </Text>
                         </Text>
-                        <img src={volvo.imageUrl} alt='Volvo s60 img' style={{ width: '276.89px' }}/>
                       </div>
+                        <img src={volvo.imageUrl} alt='Volvo s60 img' style={{ width: '276.89px' }}/>
                       <div className='links' style={{ padding: '12px', lineHeight: '1.375rem', justifyContent: 'center', display: 'inline-flex', margin: '7px' }}>
                         <Link href={`/learn/${volvo.id}`} arrow="right" style={{paddingRight: '15px' }}>LEARN</Link>
                         <Link href={`/shop/${volvo.id}`} arrow="right">SHOP</Link>
